@@ -2,6 +2,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+//importing the date module inside ours
+const date = require(__dirname + "/date.js")
+
 const app = express();
 
 //therefore making a collections
@@ -14,16 +17,8 @@ app.use(express.static("public"))
 
 //setting up the get request
 app.get("/",function(req,res){
-    var today = new Date()
     
-    var options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    }
-
-    var day = today.toLocaleDateString("en-US",options);
-    
+    let day = date.getDay()
     res.render("list",{listTitle: day, newListItems : items});
 })
 
