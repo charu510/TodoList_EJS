@@ -9,6 +9,7 @@ var items = ["Buy food","Cook food","Eat food"]
 
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static("public"))
 
 //setting up the get request
 app.get("/",function(req,res){
