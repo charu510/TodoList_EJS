@@ -52,6 +52,11 @@ app.post("/work", function(req,res){
     res.redirect("/work")
 })
 
+//making the route for the about page
+app.get("/about", function(req,res){
+    res.render('about')
+})
+
 //setting up the server
 app.listen(3000, function(){
     console.log("Server started on port 3000")
